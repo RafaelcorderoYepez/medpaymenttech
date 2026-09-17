@@ -29,6 +29,7 @@
   --color-ring: var(--ring);
   --color-surface-soft: var(--surface-soft);
   --color-success-soft: var(--success-soft);
+  --color-mint: var(--mint);
   --color-footer-accent: var(--footer-accent);
   --shadow-card: var(--shadow-card);
   --shadow-hero: var(--shadow-hero);
@@ -53,6 +54,7 @@
   --ring: oklch(0.62 0.17 151);
   --surface-soft: oklch(0.965 0.01 241);
   --success-soft: oklch(0.96 0.035 153);
+  --mint: oklch(0.96 0.035 155);
   --footer-accent: oklch(0.75 0.17 143);
   --shadow-card: 0 12px 35px -20px oklch(0.27 0.087 251 / 0.25);
   --shadow-hero: 0 28px 70px -30px oklch(0.27 0.087 251 / 0.42);

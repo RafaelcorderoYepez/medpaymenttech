@@ -227,16 +227,17 @@ function Index() {
         </div>
       </section>
 
-      <section id="solutions" className="border-y border-border bg-card py-12 sm:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
+      <section id="solutions" aria-labelledby="features-heading" className="bg-card py-14 sm:py-18">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 id="features-heading" className="sr-only">Payment features</h2>
+          <div className="grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-5">
             {features.map(({ title, description, icon: Icon }) => (
-              <article key={title} className="group bg-card p-6 text-center transition-colors hover:bg-success-soft sm:p-7">
-                <span className="mx-auto grid size-14 place-items-center rounded-full bg-success-soft text-accent transition-transform group-hover:scale-105">
-                  <Icon className="size-7" strokeWidth={1.8} />
+              <article key={title} className="group text-center last:col-span-2 last:mx-auto last:max-w-[220px] md:last:col-span-1 md:last:max-w-none">
+                <span className="mx-auto grid size-20 place-items-center rounded-full bg-mint text-accent transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105 sm:size-24">
+                  <Icon size={40} strokeWidth={2.2} />
                 </span>
-                <h2 className="mt-4 text-base font-extrabold text-primary">{title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
+                <h3 className="mt-5 text-lg font-extrabold leading-tight text-primary sm:text-xl">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">{description}</p>
               </article>
             ))}
           </div>
