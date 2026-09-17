@@ -133,10 +133,10 @@ function BrandLockup() {
   return (
     <div className="flex min-w-0 items-center gap-3 sm:gap-5" aria-label="Capital PaymentTech and Clover PracticePay">
       <a href="#top" className="flex min-w-0 items-center" aria-label="Capital PaymentTech home">
-        <img src={capitalLogo.url} alt="Capital PaymentTech" className="h-20 w-auto max-w-[190px] object-contain sm:max-w-[260px]" />
+        <img src={capitalLogo.url} alt="Capital PaymentTech" className="h-20 w-auto object-contain" />
       </a>
-      <span className="h-10 w-px shrink-0 bg-border" />
-      <a href="#solutions" className="flex min-w-0 items-center gap-2" aria-label="Clover PracticePay solutions">
+      <span className="hidden h-10 w-px shrink-0 bg-border sm:block" />
+      <a href="#solutions" className="hidden min-w-0 items-center gap-2 sm:flex" aria-label="Clover PracticePay solutions">
         <span className="grid size-9 shrink-0 grid-cols-2 gap-0.5" aria-hidden="true">
           <span className="rounded-full rounded-br-sm bg-accent" />
           <span className="rounded-full rounded-bl-sm bg-accent" />
