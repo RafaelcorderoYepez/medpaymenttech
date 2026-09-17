@@ -321,7 +321,7 @@ function Index() {
                 </li>
                 <li className="flex gap-4">
                   <span className="grid size-11 shrink-0 place-items-center rounded-md bg-success-soft text-accent"><Phone className="size-5" /></span>
-                  <div><h3 className="text-sm font-extrabold text-primary">Phone</h3><a href="tel:+15614549475" className="mt-1 inline-block min-h-11 py-2 text-sm font-bold text-accent hover:text-primary">561-454-9475</a></div>
+                  <div><h3 className="text-sm font-extrabold text-primary">Phone</h3><a href="tel:+15614549475" className="mt-1 inline-block min-h-11 py-2 text-sm font-bold text-accent hover:text-primary">(954) 451-6808</a></div>
                 </li>
                 <li className="flex gap-4">
                   <span className="grid size-11 shrink-0 place-items-center rounded-md bg-success-soft text-accent"><Mail className="size-5" /></span>
@@ -360,9 +360,9 @@ function Index() {
               <span>Request Your Free Savings Analysis</span>
             </a>
             <div className="border-primary-foreground/20 lg:border-l lg:pl-8">
-              <p className="text-sm font-bold text-footer-accent">Patrick Diaz</p>
+              <p className="text-sm font-bold text-footer-accent">Sales</p>
               <a href="tel:+15614549475" className="mt-1 block text-xl font-extrabold hover:text-footer-accent">
-                561-454-9475
+                (954) 451-6808
               </a>
             </div>
             <p className="max-w-48 font-script text-2xl leading-tight text-footer-accent">Partners in a Healthier Tomorrow</p>
