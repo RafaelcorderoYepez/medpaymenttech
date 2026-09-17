@@ -143,7 +143,6 @@ const impacts = [
   { title: "A Stronger Practice", description: "Built for growth.", icon: TrendingUp },
 ];
 
-
 function Index() {
   return (
     <main id="top" className="min-h-screen overflow-hidden bg-background text-foreground">
