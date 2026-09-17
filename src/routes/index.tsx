@@ -2,8 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowUpRight,
   BarChart3,
-  CalendarDays,
-  ChartNoAxesCombined,
   Check,
   CircleDollarSign,
   ClipboardCheck,
@@ -12,8 +10,6 @@ import {
   GraduationCap,
   HeartPulse,
   Headphones,
-  Landmark,
-  Link2,
   MailCheck,
   Phone,
   RefreshCw,
