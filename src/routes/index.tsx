@@ -266,60 +266,58 @@ function Index() {
         </div>
       </section>
 
-      <section className="border-y border-accent/15 bg-success-soft">
-        <div className="mx-auto grid max-w-7xl sm:grid-cols-2 lg:grid-cols-4">
+      <section aria-labelledby="values-heading" className="bg-mint py-10">
+        <h2 id="values-heading" className="sr-only">The value for your practice</h2>
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
           {impacts.map(({ title, description, icon: Icon }, index) => (
-            <article key={title} className="flex items-center gap-4 border-b border-accent/15 px-5 py-6 sm:px-8 lg:border-b-0 lg:border-r lg:last:border-r-0">
-              <Icon className="size-9 shrink-0 text-accent" strokeWidth={1.8} />
+            <article key={title} className={`grid grid-cols-[auto_minmax(0,1fr)] items-center gap-4 ${index ? "lg:border-l lg:border-accent/20 lg:pl-8" : ""}`}>
+              <Icon className="shrink-0 text-accent" size={42} strokeWidth={2.3} />
               <div>
-                <h2 className="text-xs font-extrabold uppercase text-primary">{title}</h2>
-                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{description}</p>
+                <h3 className="text-sm font-black uppercase text-primary sm:text-base">{title}</h3>
+                <p className="mt-1 text-sm leading-snug text-navy-soft">{description}</p>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="contact" className="bg-card py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <div className="mb-9 max-w-2xl">
-            <p className="text-xs font-extrabold uppercase text-accent">Get in touch</p>
-            <h2 className="mt-3 text-3xl font-extrabold text-primary sm:text-4xl">Let’s talk about your practice.</h2>
+      <section id="contact" aria-labelledby="contact-heading" className="bg-surface-soft py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <p className="font-script text-3xl text-accent">We'd love to hear from you</p>
+            <h2 id="contact-heading" className="mt-2 text-3xl font-black uppercase text-primary sm:text-4xl">Contact Us</h2>
+            <p className="mt-3 text-navy-soft">Questions about payments for your medical practice? Reach out — we're here to help.</p>
           </div>
-          <div className="grid overflow-hidden rounded-lg border border-border bg-background shadow-card lg:grid-cols-[0.82fr_1.18fr]">
-            <div className="p-6 sm:p-8 lg:p-10">
-              <ul className="space-y-7">
-                <li className="flex gap-4">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-md bg-success-soft text-accent"><MapPin className="size-5" /></span>
-                  <div><h3 className="text-sm font-extrabold text-primary">Address</h3><p className="mt-1 text-sm leading-relaxed text-muted-foreground">8185 Via Ancho Rd #880396<br />Boca Raton, FL 33488</p></div>
-                </li>
-                <li className="flex gap-4">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-md bg-success-soft text-accent"><Clock className="size-5" /></span>
-                  <div><h3 className="text-sm font-extrabold text-primary">Hours</h3><p className="mt-1 text-sm leading-relaxed text-muted-foreground">Monday – Friday<br />9:00am – 6:00pm (EST)</p></div>
-                </li>
-                <li className="flex gap-4">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-md bg-success-soft text-accent"><Phone className="size-5" /></span>
-                  <div><h3 className="text-sm font-extrabold text-primary">Phone</h3><a href="tel:+15614549475" className="mt-1 inline-block min-h-11 py-2 text-sm font-bold text-accent hover:text-primary">(954) 451-6808</a></div>
-                </li>
-                <li className="flex gap-4">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-md bg-success-soft text-accent"><Mail className="size-5" /></span>
-                  <div className="min-w-0"><h3 className="text-sm font-extrabold text-primary">Email</h3><a href="mailto:contact@medpaymenttech.com" className="mt-1 inline-block min-h-11 break-all py-2 text-sm font-bold text-accent hover:text-primary">contact@medpaymenttech.com</a></div>
-                </li>
-              </ul>
+          <div className="mt-10 grid gap-8 lg:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                { icon: MapPin, title: "Address", lines: ["8185 Via Ancho Rd #880396", "Boca Raton, FL 33488"], href: "https://www.google.com/maps/search/?api=1&query=8185+Via+Ancho+Rd+%23880396+Boca+Raton+FL+33488" },
+                { icon: Clock, title: "Hours", lines: ["Monday – Friday", "9:00am – 6:00pm (EST)"] },
+                { icon: Phone, title: "Phone", lines: ["Sales", "(954) 451-6808"], href: "tel:+15614549475" },
+                { icon: Mail, title: "Email", lines: ["contact@medpaymenttech.com"], href: "mailto:contact@medpaymenttech.com" },
+              ].map(({ icon: Icon, title, lines, href }) => (
+                <article key={title} className="rounded-lg bg-card p-6 shadow-card transition-shadow hover:shadow-float">
+                  <span className="grid size-12 place-items-center rounded-full bg-accent/10 text-accent"><Icon size={22} /></span>
+                  <h3 className="mt-4 text-sm font-black uppercase text-primary">{title}</h3>
+                  {href ? (
+                    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="mt-2 block break-words text-sm leading-relaxed text-navy-soft transition-colors hover:text-accent">
+                      {lines.map((line) => <span key={line} className="block">{line}</span>)}
+                    </a>
+                  ) : (
+                    <p className="mt-2 text-sm leading-relaxed text-navy-soft">{lines.map((line) => <span key={line} className="block">{line}</span>)}</p>
+                  )}
+                </article>
+              ))}
             </div>
-            <div className="border-t border-border lg:border-l lg:border-t-0">
-              <div className="aspect-[4/3] min-h-80 w-full lg:h-full lg:aspect-auto">
-                <iframe
-                  title="Capital PaymentTech location in Boca Raton"
-                  src="https://www.google.com/maps?q=8185%20Via%20Ancho%20Rd%20Boca%20Raton%20FL%2033488&output=embed"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="h-full w-full border-0"
-                />
-              </div>
-              <a href="https://www.google.com/maps/search/?api=1&query=8185+Via+Ancho+Rd+%23880396+Boca+Raton+FL+33488" target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center justify-between bg-primary px-5 py-3 text-sm font-bold text-primary-foreground hover:text-footer-accent">
-                Open in Google Maps <ArrowUpRight className="size-4" />
-              </a>
+            <div className="overflow-hidden rounded-lg shadow-card">
+              <iframe
+                title="Map: Capital PaymentTech, 8185 Via Ancho Rd, Boca Raton, FL"
+                src="https://www.google.com/maps?q=8185%20Via%20Ancho%20Rd%20Boca%20Raton%20FL%2033488&output=embed"
+                className="h-full min-h-[320px] w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
