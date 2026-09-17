@@ -26,6 +26,11 @@ import {
 import doctorHero from "../assets/doctor-hero.jpg";
 import paymentTerminal from "../assets/clover-flex-device.png";
 import capitalLogo from "../assets/capital-paymenttech-logo.png.asset.json";
+import surchargeProgramImage from "../assets/medical-surcharge-payment.jpg";
+import lowDebitRatesImage from "../assets/medical-debit-payment.jpg";
+import nextDayFundingImage from "../assets/medical-next-day-funding.jpg";
+import hsaFsaReadyImage from "../assets/medical-hsa-fsa.jpg";
+import paymentLinksImage from "../assets/medical-payment-link.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -54,26 +59,36 @@ const features = [
     title: "Surcharge Program",
     description: "Pass credit card fees legally and easily.",
     icon: CircleDollarSign,
+    image: surchargeProgramImage,
+    imageAlt: "Patient making a contactless payment at a medical clinic",
   },
   {
     title: "Low Debit Rates",
     description: "Keep costs low on debit transactions.",
     icon: CreditCard,
+    image: lowDebitRatesImage,
+    imageAlt: "Patient using a debit card at a medical clinic terminal",
   },
   {
     title: "Next-Day Funding",
     description: "Improve your cash flow.",
     icon: Zap,
+    image: nextDayFundingImage,
+    imageAlt: "Medical practice manager and physician reviewing cash flow",
   },
   {
     title: "HSA/FSA Ready",
     description: "Accept HSA/FSA payments with ease.",
     icon: HeartPulse,
+    image: hsaFsaReadyImage,
+    imageAlt: "Patient presenting a health benefits card at a medical clinic",
   },
   {
     title: "Payment Links",
     description: "Collect balances anytime, anywhere.",
     icon: Smartphone,
+    image: paymentLinksImage,
+    imageAlt: "Patient completing a medical payment securely by phone",
   },
 ];
 
@@ -230,14 +245,19 @@ function Index() {
       <section id="solutions" aria-labelledby="features-heading" className="bg-card py-14 sm:py-18">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 id="features-heading" className="sr-only">Payment features</h2>
-          <div className="grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-5">
-            {features.map(({ title, description, icon: Icon }) => (
-              <article key={title} className="group text-center last:col-span-2 last:mx-auto last:max-w-[220px] md:last:col-span-1 md:last:max-w-none">
-                <span className="mx-auto grid size-20 place-items-center rounded-full bg-mint text-accent transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105 sm:size-24">
-                  <Icon size={40} strokeWidth={2.2} />
-                </span>
-                <h3 className="mt-5 text-lg font-extrabold leading-tight text-primary sm:text-xl">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">{description}</p>
+          <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-5">
+            {features.map(({ title, description, icon: Icon, image, imageAlt }) => (
+              <article key={title} className="group min-w-0 overflow-hidden rounded-lg border border-border bg-card text-center shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-float last:col-span-2 last:mx-auto last:w-full last:max-w-[280px] lg:last:col-span-1 lg:last:max-w-none">
+                <div className="relative aspect-[4/3] overflow-hidden bg-mint">
+                  <img src={image} alt={imageAlt} width={1024} height={768} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <span className="absolute bottom-3 left-3 grid size-11 place-items-center rounded-full border-2 border-card bg-accent text-accent-foreground shadow-card sm:size-12">
+                    <Icon size={23} strokeWidth={2.2} />
+                  </span>
+                </div>
+                <div className="p-4 sm:p-5 lg:px-3">
+                  <h3 className="text-base font-extrabold leading-tight text-primary sm:text-lg">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
+                </div>
               </article>
             ))}
           </div>
