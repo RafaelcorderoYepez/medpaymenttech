@@ -31,8 +31,10 @@
   --color-success-soft: var(--success-soft);
   --color-mint: var(--mint);
   --color-footer-accent: var(--footer-accent);
+  --color-navy-soft: var(--navy-soft);
   --shadow-card: var(--shadow-card);
   --shadow-hero: var(--shadow-hero);
+  --shadow-float: var(--shadow-float);
 }
 
 :root {
@@ -56,8 +58,10 @@
   --success-soft: oklch(0.96 0.035 153);
   --mint: oklch(0.96 0.035 155);
   --footer-accent: oklch(0.75 0.17 143);
+  --navy-soft: oklch(0.35 0.08 247);
   --shadow-card: 0 12px 35px -20px oklch(0.27 0.087 251 / 0.25);
   --shadow-hero: 0 28px 70px -30px oklch(0.27 0.087 251 / 0.42);
+  --shadow-float: 0 18px 50px color-mix(in oklab, var(--primary) 18%, transparent);
 }
 
 @layer base {
