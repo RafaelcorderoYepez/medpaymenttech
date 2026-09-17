@@ -2,18 +2,21 @@ import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowUpRight,
   BarChart3,
+  CalendarClock,
   Check,
   CircleDollarSign,
   ClipboardCheck,
   CreditCard,
   FileChartColumnIncreasing,
   GraduationCap,
+  Headset,
   HeartPulse,
   Headphones,
   Clock,
   Mail,
   MapPin,
   MailCheck,
+  Presentation,
   Phone,
   RefreshCw,
   Settings,
@@ -21,12 +24,13 @@ import {
   Smartphone,
   TrendingUp,
   Users,
+  UsersRound,
   WalletCards,
   Zap,
 } from "lucide-react";
 
 import doctorHero from "../assets/doctor-hero.jpg";
-import paymentTerminal from "../assets/payment-terminal.jpg";
+import paymentTerminal from "../assets/clover-flex-device.png";
 import capitalLogo from "../assets/capital-paymenttech-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -82,43 +86,43 @@ const features = [
 const benefits = [
   {
     title: "Recurring Payments",
-    description: "Ideal for memberships, treatment plans, and follow-ups.",
-    icon: RefreshCw,
-  },
-  {
-    title: "Card-on-File",
-    description: "Secure, easy, and convenient for repeat visits.",
-    icon: WalletCards,
-  },
-  {
-    title: "Patient Balance Recovery Tools",
-    description: "Help collect outstanding balances.",
-    icon: MailCheck,
-  },
-  {
-    title: "Dedicated Account Manager",
-    description: "Personal support, not a call center.",
-    icon: Users,
+    description: "Ideal for treatment plans and orthodontics",
+    icon: CalendarClock,
   },
   {
     title: "Chargeback Assistance",
-    description: "We help you when disputes happen.",
-    icon: Headphones,
+    description: "We help you when disputes happen",
+    icon: Headset,
+  },
+  {
+    title: "Card-on-File",
+    description: "Secure, easy, and convenient",
+    icon: WalletCards,
   },
   {
     title: "Staff Training Included",
-    description: "For a smooth implementation.",
-    icon: GraduationCap,
+    description: "For a smooth implementation",
+    icon: Presentation,
+  },
+  {
+    title: "Patient Balance Recovery Tools",
+    description: "Help collect outstanding balances",
+    icon: Mail,
   },
   {
     title: "Quarterly Statement Review",
-    description: "Ensure you’re always getting the best rates.",
-    icon: ClipboardCheck,
+    description: "Ensure you're always getting the best rates",
+    icon: FileChartColumnIncreasing,
+  },
+  {
+    title: "Dedicated Account Manager",
+    description: "Personal support, not a call center",
+    icon: UsersRound,
   },
   {
     title: "Annual Savings Report",
-    description: "See exactly how much you’ve saved.",
-    icon: FileChartColumnIncreasing,
+    description: "See exactly how much you've saved",
+    icon: BarChart3,
   },
 ];
 
@@ -245,50 +249,25 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-background py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <div className="mb-9 flex items-center gap-4">
-            <h2 className="shrink-0 text-xl font-extrabold uppercase text-accent sm:text-2xl">Additional Benefits for Your Practice</h2>
-            <span className="hidden h-px grow bg-accent/40 sm:block" />
-          </div>
-          <div className="grid gap-10 lg:grid-cols-[1.4fr_0.6fr] lg:gap-12">
-            <div className="grid gap-x-8 gap-y-7 sm:grid-cols-2">
-              {benefits.map(({ title, description, icon: Icon }) => (
-                <article key={title} className="flex gap-4">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-md border border-border bg-card text-primary shadow-card">
-                    <Icon className="size-5" strokeWidth={1.8} />
-                  </span>
-                  <div>
-                    <h3 className="text-sm font-extrabold text-primary">{title}</h3>
-                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">{description}</p>
-                  </div>
+      <section className="bg-surface-soft py-16 font-outfit sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.35fr_.65fr] lg:px-8">
+          <div>
+            <div className="mb-9 flex items-center gap-4"><h2 className="text-2xl font-black uppercase text-accent sm:text-3xl">Additional benefits for your practice</h2><span className="hidden h-0.5 flex-1 bg-accent/60 sm:block" /></div>
+            <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
+              {benefits.map(({ icon: Icon, title, description }) => (
+                <article key={title} className="group grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4">
+                  <span className="grid size-12 shrink-0 place-items-center rounded-md border border-border bg-card text-primary shadow-card transition-colors group-hover:border-accent group-hover:text-accent"><Icon size={26} /></span>
+                  <div><h3 className="font-extrabold text-primary">{title}</h3><p className="mt-1 leading-snug text-muted-foreground">{description}</p></div>
                 </article>
               ))}
             </div>
-
-            <article className="overflow-hidden rounded-lg border border-border bg-card shadow-card">
-              <div className="p-6 sm:p-8">
-                <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-success-soft px-3 py-1 text-xs font-bold text-accent">
-                  <Check className="size-3.5" /> Included
-                </span>
-                <h3 className="text-2xl font-extrabold text-primary">Complimentary Equipment</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Clover devices at no upfront cost.</p>
-              </div>
-              <div className="relative aspect-square overflow-hidden border-t border-border sm:aspect-[5/4] lg:aspect-square">
-                <img
-                  src={paymentTerminal}
-                  alt="Modern point-of-sale terminal on a medical office counter"
-                  width={1024}
-                  height={1024}
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                />
-                <p className="absolute bottom-5 right-5 max-w-40 text-right font-script text-2xl leading-none text-primary">
-                  Payments Made Simple for a Healthier Tomorrow
-                </p>
-              </div>
-            </article>
           </div>
+          <aside className="relative min-h-[520px] overflow-hidden rounded-lg bg-card shadow-card">
+            <img src={paymentTerminal} alt="Clover Flex payment terminal in a modern medical office" width={928} height={1152} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,var(--card)_0%,color-mix(in_oklab,var(--card)_88%,transparent)_24%,transparent_58%)]" />
+            <div className="relative p-7 sm:p-8"><h2 className="max-w-xs text-4xl font-black leading-none text-primary">Complimentary Equipment</h2><p className="mt-4 max-w-[240px] text-xl text-muted-foreground">Clover devices at no upfront cost</p></div>
+            <p className="absolute bottom-6 right-6 max-w-[220px] rotate-[-4deg] text-right font-script text-3xl leading-none text-accent">Payments Made Simple for a Healthier Tomorrow</p>
+          </aside>
         </div>
       </section>
 
