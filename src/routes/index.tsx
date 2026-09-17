@@ -23,9 +23,10 @@ import {
   Zap,
 } from "lucide-react";
 
+import { SiteHeader } from "../components/SiteHeader";
+
 import doctorHero from "../assets/doctor-hero.jpg";
 import paymentTerminal from "../assets/clover-flex-device.png";
-import capitalLogo from "../assets/capital-paymenttech-logo.png.asset.json";
 import surchargeProgramImage from "../assets/medical-surcharge-payment.jpg";
 import lowDebitRatesImage from "../assets/medical-debit-payment.jpg";
 import nextDayFundingImage from "../assets/medical-next-day-funding.jpg";
@@ -142,55 +143,11 @@ const impacts = [
   { title: "A Stronger Practice", description: "Built for growth.", icon: TrendingUp },
 ];
 
-function BrandLockup() {
-  return (
-    <div className="flex min-w-0 items-center gap-3 sm:gap-5" aria-label="Capital PaymentTech and Clover PracticePay">
-      <a href="#top" className="flex min-w-0 items-center" aria-label="Capital PaymentTech home">
-        <img
-          src={capitalLogo.url}
-          alt="Capital PaymentTech"
-          className="h-9 w-auto max-w-[180px] object-contain sm:h-11 lg:h-20 lg:max-w-[320px]"
-        />
-      </a>
-      <span className="hidden h-10 w-px shrink-0 bg-border sm:block" />
-      <a href="#solutions" className="hidden min-w-0 items-center gap-2 sm:flex" aria-label="Clover PracticePay solutions">
-        <span className="grid size-9 shrink-0 grid-cols-2 gap-0.5" aria-hidden="true">
-          <span className="rounded-full rounded-br-sm bg-accent" />
-          <span className="rounded-full rounded-bl-sm bg-accent" />
-          <span className="rounded-full rounded-tr-sm bg-accent" />
-          <span className="rounded-full rounded-tl-sm bg-accent" />
-        </span>
-        <span className="min-w-0 leading-none">
-          <strong className="block truncate text-lg font-extrabold text-foreground sm:text-2xl">clover</strong>
-          <span className="block truncate text-[9px] font-bold text-accent sm:text-xs">PracticePay</span>
-        </span>
-      </a>
-    </div>
-  );
-}
 
 function Index() {
   return (
     <main id="top" className="min-h-screen overflow-hidden bg-background text-foreground">
-      <header className="border-b border-border bg-card">
-        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:px-8 lg:px-10">
-          <BrandLockup />
-          <div className="hidden max-w-xs items-center gap-3 text-right lg:flex">
-            <HeartPulse className="size-8 shrink-0 text-accent" strokeWidth={1.8} />
-            <p className="text-xs font-semibold leading-relaxed text-muted-foreground">
-              Healthier Practices, Brighter Tomorrows
-              <span className="block font-medium text-primary">Patients · People · Healthier Communities</span>
-            </p>
-          </div>
-          <a
-            href="tel:+15614549475"
-            className="grid size-10 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground transition-transform hover:scale-105 lg:hidden"
-            aria-label="Call Patrick Diaz"
-          >
-            <Phone className="size-4" />
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="relative bg-surface-soft">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[1.02fr_0.98fr] lg:px-10 lg:py-20">
@@ -242,7 +199,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="solutions" aria-labelledby="features-heading" className="bg-card py-14 sm:py-18">
+      <section id="solutions" aria-labelledby="features-heading" className="scroll-mt-28 bg-card py-14 sm:py-18">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 id="features-heading" className="sr-only">Payment features</h2>
           <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-5">
@@ -301,7 +258,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="contact" aria-labelledby="contact-heading" className="bg-surface-soft py-16 sm:py-20">
+      <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-28 bg-surface-soft py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p className="font-script text-3xl text-accent">We'd love to hear from you</p>
