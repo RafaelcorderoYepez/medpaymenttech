@@ -139,8 +139,14 @@ function PracticePayPage() {
             <div className="mt-10 grid gap-6 sm:grid-cols-2">
               {advantages.map(({ image, alt, icon: Icon, title, text }) => (
                 <article key={title} className="grid overflow-hidden rounded-lg bg-card shadow-card md:grid-cols-[0.9fr_1.1fr]">
-                  <img src={image} alt={alt} loading="lazy" width={1200} height={800} className="aspect-[3/2] h-full min-h-52 w-full object-cover" />
-                  <div className="flex flex-col justify-center p-6"><Icon className="size-9 text-accent" strokeWidth={2.1} /><h3 className="mt-4 text-xl font-extrabold text-primary">{title}</h3><p className="mt-2 leading-relaxed text-navy-soft">{text}</p></div>
+                  <div className="relative min-h-52 overflow-hidden bg-mint">
+                    <img src={image} alt={alt} loading="lazy" width={1200} height={800} className="absolute inset-0 h-full w-full object-cover" />
+                  </div>
+                  <div className="relative z-10 flex min-h-52 flex-col justify-center bg-card p-6">
+                    <Icon className="size-9 shrink-0 text-accent" strokeWidth={2.1} />
+                    <h3 className="mt-4 text-xl font-extrabold text-primary">{title}</h3>
+                    <p className="mt-2 leading-relaxed text-navy-soft">{text}</p>
+                  </div>
                 </article>
               ))}
             </div>
