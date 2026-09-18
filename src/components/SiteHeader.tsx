@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { HeartPulse, Phone } from "lucide-react";
 
 import capitalLogo from "../assets/capital-paymenttech-logo.png.asset.json";
@@ -11,13 +12,13 @@ const HIDE_BUFFER = 28;
 function BrandLockup() {
   return (
     <div className="flex min-w-0 items-center" aria-label="Capital PaymentTech">
-      <a href="#top" className="flex min-w-0 items-center" aria-label="Capital PaymentTech home">
+      <Link to="/" className="flex min-w-0 items-center" aria-label="Capital PaymentTech home">
         <img
           src={capitalLogo.url}
           alt="Capital PaymentTech"
           className="h-9 w-auto max-w-[180px] object-contain sm:h-11 lg:h-20 lg:max-w-[320px]"
         />
-      </a>
+      </Link>
     </div>
   );
 }
@@ -125,8 +126,17 @@ export function SiteHeader() {
           revealed ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:px-8 lg:px-10">
+        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 px-5 py-3 sm:px-8 lg:grid-cols-[minmax(0,1fr)_auto_auto] lg:px-10 lg:py-4">
           <BrandLockup />
+          <nav className="col-span-2 row-start-2 flex items-center lg:col-span-1 lg:col-start-2 lg:row-start-1" aria-label="Primary navigation">
+            <Link
+              to="/practicepay"
+              activeOptions={{ exact: true }}
+              className="text-sm font-bold text-primary transition-colors hover:text-accent [&.active]:text-accent"
+            >
+              Clover PracticePay
+            </Link>
+          </nav>
           <div className="hidden max-w-xs items-center gap-3 text-right lg:flex">
             <HeartPulse className="size-8 shrink-0 text-accent" strokeWidth={1.8} />
             <p className="text-xs font-semibold leading-relaxed text-muted-foreground">
@@ -136,7 +146,7 @@ export function SiteHeader() {
           </div>
           <a
             href="tel:+19544516808"
-            className="grid size-10 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground transition-transform hover:scale-105 lg:hidden"
+            className="col-start-2 row-start-1 grid size-10 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground transition-transform hover:scale-105 lg:hidden"
             aria-label="Call Sales"
           >
             <Phone className="size-4" />
