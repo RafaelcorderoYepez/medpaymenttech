@@ -165,7 +165,7 @@ function Index() {
               Lower processing costs. More patient payment options. A stronger, more profitable practice.
             </p>
             <a
-              href="tel:+15614549475"
+              href="tel:+19544516808"
               className="mt-8 inline-flex items-center gap-3 rounded-md bg-accent px-6 py-3.5 text-sm font-extrabold text-accent-foreground shadow-accent transition-transform hover:-translate-y-0.5"
             >
               Request a free savings analysis <ArrowUpRight className="size-4" />
@@ -237,7 +237,6 @@ function Index() {
             <img src={paymentTerminal} alt="Clover Flex payment terminal in a modern medical office" width={928} height={1152} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,var(--card)_0%,color-mix(in_oklab,var(--card)_88%,transparent)_24%,transparent_58%)]" />
             <div className="relative p-7 sm:p-8"><h2 className="max-w-xs text-4xl font-black leading-none text-primary">Complimentary Equipment</h2><p className="mt-4 max-w-[240px] text-xl text-muted-foreground">Clover devices at no upfront cost</p></div>
-            <p className="absolute bottom-6 right-6 max-w-[220px] rotate-[-4deg] text-right font-script text-3xl leading-none text-accent">Payments Made Simple for a Healthier Tomorrow</p>
           </aside>
         </div>
       </section>
@@ -269,7 +268,7 @@ function Index() {
               {[
                 { icon: MapPin, title: "Address", lines: ["8185 Via Ancho Rd #880396", "Boca Raton, FL 33488"], href: "https://www.google.com/maps/search/?api=1&query=8185+Via+Ancho+Rd+%23880396+Boca+Raton+FL+33488" },
                 { icon: Clock, title: "Hours", lines: ["Monday – Friday", "9:00am – 6:00pm (EST)"] },
-                { icon: Phone, title: "Phone", lines: ["Sales", "(954) 451-6808"], href: "tel:+15614549475" },
+                { icon: Phone, title: "Phone", lines: ["Sales", "(954) 451-6808"], href: "tel:+19544516808" },
                 { icon: Mail, title: "Email", lines: ["contact@medpaymenttech.com"], href: "mailto:contact@medpaymenttech.com" },
               ].map(({ icon: Icon, title, lines, href }) => (
                 <article key={title} className="rounded-lg bg-card p-6 shadow-card transition-shadow hover:shadow-float">
@@ -303,7 +302,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:px-10">
           <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto_auto]">
             <a
-              href="tel:+15614549475"
+              href="tel:+19544516808"
               className="group flex items-center gap-4 text-base font-extrabold uppercase sm:text-lg"
             >
               <span className="grid size-12 shrink-0 place-items-center rounded-full bg-primary-foreground text-primary transition-transform group-hover:rotate-6">
@@ -313,7 +312,7 @@ function Index() {
             </a>
             <div className="border-primary-foreground/20 lg:border-l lg:pl-8">
               <p className="text-sm font-bold text-footer-accent">Sales</p>
-              <a href="tel:+15614549475" className="mt-1 block text-xl font-extrabold hover:text-footer-accent">
+              <a href="tel:+19544516808" className="mt-1 block text-xl font-extrabold hover:text-footer-accent">
                 (954) 451-6808
               </a>
             </div>

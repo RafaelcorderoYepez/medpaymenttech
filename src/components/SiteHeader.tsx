@@ -10,26 +10,13 @@ const HIDE_BUFFER = 28;
 
 function BrandLockup() {
   return (
-    <div className="flex min-w-0 items-center gap-3 sm:gap-5" aria-label="Capital PaymentTech and Clover PracticePay">
+    <div className="flex min-w-0 items-center" aria-label="Capital PaymentTech">
       <a href="#top" className="flex min-w-0 items-center" aria-label="Capital PaymentTech home">
         <img
           src={capitalLogo.url}
           alt="Capital PaymentTech"
           className="h-9 w-auto max-w-[180px] object-contain sm:h-11 lg:h-20 lg:max-w-[320px]"
         />
-      </a>
-      <span className="hidden h-10 w-px shrink-0 bg-border sm:block" />
-      <a href="#solutions" className="hidden min-w-0 items-center gap-2 sm:flex" aria-label="Clover PracticePay solutions">
-        <span className="grid size-9 shrink-0 grid-cols-2 gap-0.5" aria-hidden="true">
-          <span className="rounded-full rounded-br-sm bg-accent" />
-          <span className="rounded-full rounded-bl-sm bg-accent" />
-          <span className="rounded-full rounded-tr-sm bg-accent" />
-          <span className="rounded-full rounded-tl-sm bg-accent" />
-        </span>
-        <span className="min-w-0 leading-none">
-          <strong className="block truncate text-lg font-extrabold text-foreground sm:text-2xl">clover</strong>
-          <span className="block truncate text-[9px] font-bold text-accent sm:text-xs">PracticePay</span>
-        </span>
       </a>
     </div>
   );
@@ -148,7 +135,7 @@ export function SiteHeader() {
             </p>
           </div>
           <a
-            href="tel:+15614549475"
+            href="tel:+19544516808"
             className="grid size-10 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground transition-transform hover:scale-105 lg:hidden"
             aria-label="Call Sales"
           >
