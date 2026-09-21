@@ -26,9 +26,9 @@ import {
 import { SiteHeader } from "../components/SiteHeader";
 
 import doctorHero from "../assets/doctor-hero.jpg";
-import paymentTerminal from "../assets/clover-flex-device.png";
-import surchargeProgramImage from "../assets/medical-surcharge-payment.jpg";
-import lowDebitRatesImage from "../assets/medical-debit-payment.jpg";
+import paymentTerminal from "../assets/clover-flex-mini-medical.jpg";
+import surchargeProgramImage from "../assets/medical-surcharge-payment-flex.jpg";
+import lowDebitRatesImage from "../assets/medical-debit-payment-flex.jpg";
 import nextDayFundingImage from "../assets/medical-next-day-funding.jpg";
 import hsaFsaReadyImage from "../assets/medical-hsa-fsa.jpg";
 import paymentLinksImage from "../assets/medical-payment-link.jpg";
@@ -234,7 +234,7 @@ function Index() {
             </div>
           </div>
           <aside className="relative min-h-[520px] overflow-hidden rounded-lg bg-card shadow-card">
-            <img src={paymentTerminal} alt="Clover Flex payment terminal in a modern medical office" width={928} height={1152} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+            <img src={paymentTerminal} alt="Clover Flex and Clover Mini payment terminals in a modern medical office" width={1200} height={900} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,var(--card)_0%,color-mix(in_oklab,var(--card)_88%,transparent)_24%,transparent_58%)]" />
             <div className="relative p-7 sm:p-8"><h2 className="max-w-xs text-4xl font-black leading-none text-primary">Complimentary Equipment</h2><p className="mt-4 max-w-[240px] text-xl text-muted-foreground">Clover devices at no upfront cost</p></div>
           </aside>

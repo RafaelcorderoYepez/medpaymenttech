@@ -26,10 +26,10 @@ import {
 import { SiteHeader } from "@/components/SiteHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import contactlessImage from "@/assets/practicepay-medical-contactless.jpg";
+import contactlessImage from "@/assets/practicepay-medical-contactless-flex.jpg";
 import optionsImage from "@/assets/practicepay-medical-options.jpg";
 import syncImage from "@/assets/practicepay-medical-sync.jpg";
-import examRoomImage from "@/assets/practicepay-medical-exam-room.jpg";
+import examRoomImage from "@/assets/practicepay-medical-exam-room-flex.jpg";
 import financingImage from "@/assets/practicepay-medical-financing.jpg";
 import textPayImage from "@/assets/practicepay-medical-text-pay.jpg";
 import ledgerImage from "@/assets/practicepay-medical-ledger.jpg";
