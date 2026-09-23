@@ -33,8 +33,8 @@ import examRoomImage from "@/assets/practicepay-medical-exam-room-flex.jpg";
 import financingImage from "@/assets/practicepay-medical-financing.jpg";
 import textPayImage from "@/assets/practicepay-medical-text-pay.jpg";
 import ledgerImage from "@/assets/practicepay-medical-ledger.jpg";
-import cloverFlex from "@/assets/clover-flex-device.png";
-import cloverMini from "@/assets/clover-mini-device-authentic.png";
+import cloverFlex from "@/assets/clover-flex-medical-office.png";
+import cloverMini from "@/assets/clover-mini-medical-office.png";
 
 export const Route = createFileRoute("/practicepay")({
   head: () => ({
