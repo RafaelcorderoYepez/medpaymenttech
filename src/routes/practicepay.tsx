@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { submitQuoteRequest } from "@/lib/quote.functions";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -76,9 +77,24 @@ const fieldClass = "h-11 w-full rounded-md border border-input bg-background px-
 function PracticePayPage() {
   const [submitted, setSubmitted] = useState(false);
 
-  function submitQuote(event: FormEvent<HTMLFormElement>) {
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function submitQuote(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+    const form = event.currentTarget;
+    const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+    setSending(true);
+    setError(null);
+    try {
+      await submitQuoteRequest({ data: data as never });
+      form.reset();
+      setSubmitted(true);
+    } catch {
+      setError("We couldn't send your request. Please call or email Sales.");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -204,7 +220,7 @@ function PracticePayPage() {
           <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:px-10">
             <div><p className="font-script text-3xl text-accent">Let's improve your payment experience</p><h2 id="quote-heading" className="mt-2 font-outfit text-3xl font-black uppercase text-primary sm:text-4xl">Request your practice consultation</h2><p className="mt-5 text-lg leading-relaxed text-navy-soft">Tell us how your practice works. Sales will contact you to review equipment, software compatibility and payment options.</p><div className="mt-8 space-y-4 text-primary"><a href="tel:+19544516808" className="flex items-center gap-3 font-bold hover:text-accent"><Phone className="size-5 text-accent" />(954) 451-6808</a><a href="mailto:contact@medpaymenttech.com" className="flex items-center gap-3 break-all font-bold hover:text-accent"><Send className="size-5 shrink-0 text-accent" />contact@medpaymenttech.com</a></div></div>
             <form onSubmit={submitQuote} className="rounded-lg bg-surface-soft p-6 shadow-card sm:p-8">
-              {submitted ? <div role="status" className="flex min-h-80 flex-col items-center justify-center text-center"><CheckCircle2 className="size-14 text-accent" /><h3 className="mt-5 text-2xl font-black text-primary">Thank you</h3><p className="mt-2 max-w-md text-navy-soft">Your request is ready. Please call or email Sales so we can begin your consultation.</p><div className="mt-6 flex flex-wrap justify-center gap-3"><Button asChild><a href="tel:+19544516808"><Phone />Call Sales</a></Button><Button type="button" variant="outline" onClick={() => setSubmitted(false)}>Send another request</Button></div></div> : <><div className="grid gap-5 sm:grid-cols-2"><label className="grid gap-2 text-sm font-bold text-primary">Practice name<input required name="practice" className={fieldClass} /></label><label className="grid gap-2 text-sm font-bold text-primary">Your name<input required name="name" autoComplete="name" className={fieldClass} /></label><label className="grid gap-2 text-sm font-bold text-primary">Email<input required type="email" name="email" autoComplete="email" className={fieldClass} /></label><label className="grid gap-2 text-sm font-bold text-primary">Phone<input required type="tel" name="phone" autoComplete="tel" className={fieldClass} /></label><label className="grid gap-2 text-sm font-bold text-primary">Medical specialty<select required name="specialty" defaultValue="" className={fieldClass}><option value="" disabled>Select a specialty</option><option>Primary care</option><option>Specialty practice</option><option>Urgent care</option><option>Outpatient center</option><option>Other</option></select></label><label className="grid gap-2 text-sm font-bold text-primary">EHR / practice software<input name="software" placeholder="Current platform" className={fieldClass} /></label></div><label className="mt-5 grid gap-2 text-sm font-bold text-primary">What would you like to improve?<textarea name="needs" rows={4} className="w-full rounded-md border border-input bg-background p-3 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring" /></label><Button type="submit" size="lg" className="mt-6 h-12 w-full bg-accent font-extrabold text-accent-foreground hover:bg-accent/90"><ReceiptText />Request consultation</Button><p className="mt-4 text-center text-xs text-muted-foreground">By submitting, you agree to be contacted about payment solutions for your practice.</p></>}
+              {submitted ? <div role="status" className="flex min-h-80 flex-col items-center justify-center text-center"><CheckCircle2 className="size-14 text-accent" /><h3 className="mt-5 text-2xl font-black text-primary">Thank you</h3><p className="mt-2 max-w-md text-navy-soft">Your request has been sent. Our Sales team will contact you shortly.</p><div className="mt-6 flex flex-wrap justify-center gap-3"><Button asChild><a href="tel:+19544516808"><Phone />Call Sales</a></Button><Button type="button" variant="outline" onClick={() => setSubmitted(false)}>Send another request</Button></div></div> : <><div className="grid gap-5 sm:grid-cols-2"><label className="grid gap-2 text-sm font-bold text-primary">Practice name<input required name="practice" className={fieldClass} /></label><label className="grid gap-2 text-sm font-bold text-primary">Your name<input required name="name" autoComplete="name" className={fieldClass} /></label><label className="grid gap-2 text-sm font-bold text-primary">Email<input required type="email" name="email" autoComplete="email" className={fieldClass} /></label><label className="grid gap-2 text-sm font-bold text-primary">Phone<input required type="tel" name="phone" autoComplete="tel" className={fieldClass} /></label><label className="grid gap-2 text-sm font-bold text-primary">Medical specialty<select required name="specialty" defaultValue="" className={fieldClass}><option value="" disabled>Select a specialty</option><option>Primary care</option><option>Specialty practice</option><option>Urgent care</option><option>Outpatient center</option><option>Other</option></select></label><label className="grid gap-2 text-sm font-bold text-primary">EHR / practice software<input name="software" placeholder="Current platform" className={fieldClass} /></label></div><label className="mt-5 grid gap-2 text-sm font-bold text-primary">What would you like to improve?<textarea name="needs" rows={4} className="w-full rounded-md border border-input bg-background p-3 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring" /></label><Button type="submit" disabled={sending} size="lg" className="mt-6 h-12 w-full bg-accent font-extrabold text-accent-foreground hover:bg-accent/90"><ReceiptText />{sending ? "Sending..." : "Request consultation"}</Button>{error && <p role="alert" className="mt-3 text-center text-sm font-bold text-destructive">{error}</p>}<p className="mt-4 text-center text-xs text-muted-foreground">By submitting, you agree to be contacted about payment solutions for your practice.</p></>}
             </form>
           </div>
         </section>

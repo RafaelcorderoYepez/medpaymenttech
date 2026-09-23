@@ -39,7 +39,7 @@ function QuoteRequestEmail({ practice = '-', name = '-', email = '-', phone = '-
 
 export const template = {
   component: QuoteRequestEmail,
-  subject: (d: Record<string, any>) => `New consultation request: ${d.practice ?? 'Practice'}`,
+  subject: (d: Record<string, any>) => `New consultation request: ${d['practice'] ?? 'Practice'}`,
   displayName: 'Consultation request (to Sales)',
   to: 'contact@medpaymenttech.com',
   previewData: { practice: 'Sunrise Family Medicine', name: 'Jane Doe', email: 'jane@example.com', phone: '(555) 123-4567', specialty: 'Primary care', software: 'Athena', needs: 'Faster copay collection.' },
