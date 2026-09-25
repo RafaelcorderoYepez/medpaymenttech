@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 
 import { SiteHeader } from "../components/SiteHeader";
+import { SiteFooter } from "../components/SiteFooter";
 
 import doctorHero from "../assets/doctor-hero.jpg";
 import paymentTerminal from "../assets/clover-flex-mini-medical.jpg";
@@ -298,37 +299,7 @@ function Index() {
         </div>
       </section>
 
-      <footer className="bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:px-10">
-          <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto_auto]">
-            <a
-              href="tel:+19544516808"
-              className="group flex items-center gap-4 text-base font-extrabold uppercase sm:text-lg"
-            >
-              <span className="grid size-12 shrink-0 place-items-center rounded-full bg-primary-foreground text-primary transition-transform group-hover:rotate-6">
-                <Phone className="size-5" />
-              </span>
-              <span>Request Your Free Savings Analysis</span>
-            </a>
-            <div className="border-primary-foreground/20 lg:border-l lg:pl-8">
-              <p className="text-sm font-bold text-footer-accent">Sales</p>
-              <a href="tel:+19544516808" className="mt-1 block text-xl font-extrabold hover:text-footer-accent">
-                (954) 451-6808
-              </a>
-            </div>
-            <p className="max-w-48 font-script text-2xl leading-tight text-footer-accent">Partners in a Healthier Tomorrow</p>
-          </div>
-          <div className="mt-9 flex flex-col gap-4 border-t border-primary-foreground/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-xs text-primary-foreground/60">© 2026 Capital PaymentTech</p>
-            <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-5 gap-y-2 text-[10px] font-bold uppercase tracking-[0.12em] text-primary-foreground/70">
-              <a href="#solutions" className="hover:text-footer-accent">Payments</a>
-              <a href="#top" className="hover:text-footer-accent">People</a>
-              <a href="#top" className="hover:text-footer-accent">Practices</a>
-              <a href="#top" className="hover:text-footer-accent">Brighter Tomorrows</a>
-            </nav>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

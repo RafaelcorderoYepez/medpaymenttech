@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { submitQuoteRequest } from "@/lib/quote.functions";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
   BadgeCheck,
@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import contactlessImage from "@/assets/practicepay-medical-contactless-flex.jpg";
@@ -225,9 +226,7 @@ function PracticePayPage() {
           </div>
         </section>
       </main>
-      <footer className="bg-primary py-8 text-primary-foreground">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10"><p>© 2026 Capital PaymentTech. Medical payment solutions.</p><div className="flex flex-wrap gap-5"><Link to="/" className="font-bold hover:text-accent">Home</Link><a href="tel:+19544516808" className="font-bold hover:text-accent">(954) 451-6808</a><a href="mailto:contact@medpaymenttech.com" className="font-bold hover:text-accent">Email Sales</a></div></div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
